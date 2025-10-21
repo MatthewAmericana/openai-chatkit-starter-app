@@ -20,8 +20,8 @@ export const GREETING = "How can I help you today?";
 export const getThemeConfig = (theme: ColorScheme): ThemeOption => ({
   color: {
     grayscale: {
-      hue: 220,
-      tint: 6,
+      hue: 0,        // ← Can be any number for gray
+      tint: 0,       // ← Lower tint = more neutral/gray
       shade: theme === "dark" ? -1 : -4,
     },
     accent: {
