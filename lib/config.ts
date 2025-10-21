@@ -1,4 +1,8 @@
-import { ColorScheme, StartScreenPrompt, ThemeOption } from "@openai/chatkit";
+import {
+  ColorOption,
+  StartScreenPrompt,
+  ThemeOption,
+} from "@openai/chatkit";
 
 /**
  * Chat UI Configuration for the "images chatbot" look:
@@ -24,7 +28,7 @@ export const STARTER_PROMPTS: StartScreenPrompt[] = [
   {
     label: "Track my order",
     prompt: "Track my order",
-    icon: "package",
+    icon: "map-pin",
   },
 ];
 
@@ -36,7 +40,7 @@ export const PLACEHOLDER_INPUT = "Type your message";
  * - Grays are neutral/cool.
  * - Accent is near-black in light mode and near-white in dark mode.
  */
-export const getColorScheme = (theme: "light" | "dark"): ColorScheme => ({
+export const getColorScheme = (theme: "light" | "dark"): ColorOption => ({
   grayscale: {
     hue: 220,               // cool slate-like gray
     tint: 0,                // neutral
@@ -52,7 +56,8 @@ export const getColorScheme = (theme: "light" | "dark"): ColorScheme => ({
  * Theme options. Keep generous rounding to match frame, chips, and bubbles.
  */
 export const THEME = (theme: "light" | "dark"): ThemeOption => ({
-  colorScheme: getColorScheme(theme),
+  colorScheme: theme,
+  color: getColorScheme(theme),
   radius: "round",
 });
 
